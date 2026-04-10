@@ -1,0 +1,4301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxe Mall - Premium Shopping Destination</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1a1a1a;
+    --secondary: #c9a961;
+    --light: #f8f8f8;
+    --white: #ffffff;
+    --text: #333333;
+    --text-light: #666666;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1600') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content p {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    animation: fadeInUp 1.2s ease;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 48px;
+    background: var(--secondary);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    animation: fadeInUp 1.4s ease;
+}
+
+.cta-button:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Styles */
+section {
+    padding: 100px 40px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 16px;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+}
+
+/* About Section */
+.about {
+    background: var(--light);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 16px;
+    color: var(--text-light);
+}
+
+/* Brands Section */
+.brands-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.brand-card {
+    background: var(--white);
+    border-radius: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+.brand-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.brand-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.brand-card:hover img {
+    transform: scale(1.05);
+}
+
+.brand-info {
+    padding: 30px;
+}
+
+.brand-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.brand-category {
+    color: var(--secondary);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.brand-floor {
+    margin-top: 15px;
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 1px;
+}
+
+/* Dining Section */
+.dining {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.dining .section-title {
+    color: var(--white);
+}
+
+.dining .section-subtitle {
+    color: rgba(255,255,255,0.7);
+}
+
+.dining-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.dining-card {
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.dining-card:hover {
+    transform: translateY(-5px);
+}
+
+.dining-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    filter: grayscale(20%);
+    transition: filter 0.3s;
+}
+
+.dining-card:hover img {
+    filter: grayscale(0%);
+}
+
+.dining-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.dining-card p {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Services Section */
+.services {
+    background: var(--light);
+}
+
+.services-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.service-item {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--white);
+    transition: all 0.3s;
+}
+
+.service-item:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+.service-item p {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background: var(--primary);
+    color: var(--white);
+    padding: 60px 40px 30px;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+.footer-section p,
+.footer-section a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 2;
+    display: block;
+}
+
+.footer-section a:hover {
+    color: var(--secondary);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+}
+
+/* Search Bar */
+.search-section {
+    background: var(--white);
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 18px 24px;
+    border: 2px solid #e0e0e0;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--secondary);
+}
+
+/* Products Section */
+.products-section {
+    background: var(--light);
+}
+
+.products-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--secondary);
+    color: var(--white);
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+.product-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 25px;
+}
+
+.product-brand {
+    color: var(--text-light);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.product-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.current-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.original-price {
+    font-size: 16px;
+    color: var(--text-light);
+    text-decoration: line-through;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.stars {
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.rating-count {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.add-to-cart-btn:hover {
+    background: var(--secondary);
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.quick-view-btn {
+    flex: 1;
+    padding: 14px;
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.quick-view-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* Cart Badge */
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--secondary);
+    color: var(--white);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Tenant Login Modal */
+.login-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+}
+
+.login-container {
+    background: var(--white);
+    width: 90%;
+    max-width: 450px;
+    border-radius: 0;
+    overflow: hidden;
+    animation: slideUp 0.4s;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.login-header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.login-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.login-header p {
+    font-size: 14px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.close-login {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--white);
+    transition: transform 0.3s;
+}
+
+.close-login:hover {
+    transform: rotate(90deg);
+}
+
+.login-body {
+    padding: 40px;
+}
+
+.login-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.login-tab {
+    flex: 1;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: var(--text-light);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.login-tab.active {
+    color: var(--secondary);
+    border-bottom-color: var(--secondary);
+}
+
+.login-form {
+    display: none;
+}
+
+.login-form.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e0e0e0;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--secondary);
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.forgot-password a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.tenant-dashboard {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--light);
+    z-index: 3000;
+    overflow-y: auto;
+}
+
+.dashboard-header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+}
+
+.logout-btn {
+    padding: 10px 24px;
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.logout-btn:hover {
+    background: var(--white);
+    color: var(--primary);
+}
+
+.dashboard-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 40px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.dashboard-card {
+    background: var(--white);
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.dashboard-card h3 {
+    font-size: 14px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.dashboard-card .stat {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.tenant-info {
+    background: var(--white);
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+.tenant-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.info-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.info-label {
+    font-size: 12px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.info-value {
+    font-size: 16px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Tenant Login Button in Nav */
+.tenant-login-btn {
+    padding: 10px 24px;
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-left: 20px;
+}
+
+.tenant-login-btn:hover {
+    background: var(--primary);
+}
+
+/* Checkout Modal */
+.checkout-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 4000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* Checkout Modal */
+.checkout-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 4000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* My Orders Modal */
+.orders-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 4000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.orders-container {
+    background: var(--white);
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 0;
+    overflow: hidden;
+    animation: slideUp 0.4s;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.orders-header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orders-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+}
+
+.close-orders {
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.close-orders:hover {
+    transform: rotate(90deg);
+}
+
+.orders-body {
+    padding: 40px;
+}
+
+.orders-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-light);
+}
+
+.orders-empty-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    opacity: 0.3;
+}
+
+.order-card {
+    background: var(--light);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary);
+}
+
+.order-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+}
+
+.order-number-display {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.order-date {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.order-status {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.order-status.completed {
+    background: #4CAF50;
+    color: white;
+}
+
+.order-status.processing {
+    background: #FF9800;
+    color: white;
+}
+
+.order-status.shipped {
+    background: #2196F3;
+    color: white;
+}
+
+.order-items-list {
+    margin: 20px 0;
+}
+
+.order-item-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-item-row:last-child {
+    border-bottom: none;
+}
+
+.order-item-name {
+    font-weight: 600;
+}
+
+.order-item-qty {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.order-item-price {
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #ddd;
+}
+
+.order-total {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.order-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.order-btn {
+    padding: 10px 20px;
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.order-btn:hover {
+    background: var(--primary);
+}
+
+.order-btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.order-btn-secondary:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.checkout-container {
+    background: var(--white);
+    width: 100%;
+    max-width: 900px;
+    border-radius: 0;
+    overflow: hidden;
+    animation: slideUp 0.4s;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.checkout-header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.checkout-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.checkout-header p {
+    font-size: 14px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.close-checkout {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--white);
+    transition: transform 0.3s;
+}
+
+.close-checkout:hover {
+    transform: rotate(90deg);
+}
+
+.checkout-body {
+    padding: 40px;
+}
+
+.checkout-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.checkout-steps::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #e0e0e0;
+    z-index: 0;
+}
+
+.checkout-step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.checkout-step.active .step-circle {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.checkout-step.completed .step-circle {
+    background: #4CAF50;
+    color: var(--white);
+}
+
+.step-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+}
+
+.checkout-step.active .step-label {
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.checkout-content {
+    display: none;
+}
+
+.checkout-content.active {
+    display: block;
+}
+
+.checkout-section {
+    margin-bottom: 30px;
+}
+
+.checkout-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.checkout-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-secondary {
+    flex: 1;
+    padding: 16px;
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary {
+    flex: 1;
+    padding: 16px;
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.btn-primary:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.order-summary-box {
+    background: var(--light);
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-item-details {
+    flex: 1;
+}
+
+.summary-item-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.summary-item-qty {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+.summary-item-price {
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.order-success {
+    text-align: center;
+    padding: 40px;
+}
+
+.success-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.order-number {
+    font-size: 24px;
+    color: var(--secondary);
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+/* Shopping Cart Modal */
+.cart-modal {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -500px;
+    width: 500px;
+    height: 100%;
+    background: var(--white);
+    z-index: 3000;
+    box-shadow: -5px 0 30px rgba(0,0,0,0.3);
+    transition: right 0.4s ease;
+    overflow-y: auto;
+}
+
+.cart-modal.open {
+    right: 0;
+}
+
+.cart-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 2999;
+}
+
+.cart-overlay.open {
+    display: block;
+}
+
+.cart-header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.cart-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+}
+
+.close-cart {
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.close-cart:hover {
+    transform: rotate(90deg);
+}
+
+.cart-body {
+    padding: 25px;
+}
+
+.cart-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-light);
+}
+
+.cart-empty-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    opacity: 0.3;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background: var(--light);
+    border-radius: 8px;
+    position: relative;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: var(--primary);
+}
+
+.cart-item-brand {
+    font-size: 12px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.cart-item-price {
+    font-size: 18px;
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.qty-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: var(--white);
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.qty-btn:hover {
+    background: var(--secondary);
+    color: var(--white);
+    border-color: var(--secondary);
+}
+
+.qty-display {
+    width: 40px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.remove-item {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-light);
+    transition: color 0.3s;
+}
+
+.remove-item:hover {
+    color: #f44336;
+}
+
+.cart-summary {
+    margin-top: 30px;
+    padding: 25px;
+    background: var(--light);
+    border-radius: 8px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.summary-row.total {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    padding-top: 15px;
+    border-top: 2px solid #ddd;
+    margin-top: 15px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 18px;
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.checkout-btn:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.continue-shopping {
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.continue-shopping:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* Filter Buttons */
+.filter-container {
+    max-width: 1400px;
+    margin: 0 auto 50px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 12px 30px;
+    border: 2px solid var(--secondary);
+    background: transparent;
+    color: var(--text);
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--secondary);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background: var(--white);
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.4s;
+}
+
+.modal-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.modal-body {
+    padding: 40px;
+}
+
+.modal-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.modal-body .category {
+    color: var(--secondary);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.modal-body p {
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.modal-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.detail-icon {
+    font-size: 24px;
+}
+
+.detail-text h4 {
+    font-size: 12px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.detail-text p {
+    font-size: 14px;
+    color: var(--primary);
+    font-weight: 600;
+    margin: 0;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    color: var(--white);
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.close-modal:hover {
+    background: var(--secondary);
+    transform: rotate(90deg);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Favorite Button */
+.favorite-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s;
+}
+
+.favorite-btn:hover {
+    transform: scale(1.2);
+}
+
+.brand-card {
+    position: relative;
+}
+
+/* View Details Button */
+.view-details-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.view-details-btn:hover {
+    background: var(--secondary);
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.scroll-top:hover {
+    background: var(--primary);
+    transform: translateY(-5px);
+}
+
+.scroll-top.show {
+    display: flex;
+}
+
+/* Animated Counter */
+.stats-section {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.stats-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.stat-item {
+    padding: 20px;
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+/* Parallax Effect */
+.parallax-section {
+    height: 400px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('https://images.unsplash.com/photo-1519167758481-83f29da8c2b0?w=1600') center/cover fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.parallax-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.parallax-content p {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 42px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .section-title {
+        font-size: 36px;
+    }
+    
+    section {
+        padding: 60px 20px;
+    }
+    
+    .modal-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .cart-modal {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .cart-modal.open {
+        right: 0;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <div class="logo">LUXE MALL</div>
+        <ul class="nav-links">
+            <li><a href="#brands">Shop</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#dining">Dine</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" onclick="openMyOrders(); return false;">My Orders</a></li>
+        </ul>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <div class="cart-icon" onclick="openCart()">
+                🛒
+                <span class="cart-badge" id="cartCount">0</span>
+            </div>
+            <button class="tenant-login-btn" onclick="openTenantLogin()">Tenant Login</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>WALK INTO LUXURY</h1>
+        <p>Experience Premium Shopping & Dining</p>
+        <a href="#brands" class="cta-button">Explore Now</a>
+    </div>
+</section>
+
+<!-- Search Section -->
+<div class="search-section">
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search brands, restaurants, or services..." onkeyup="searchContent()">
+    </div>
+</div>
+
+<!-- About Section -->
+<section class="about">
+    <h2 class="section-title">Welcome to Luxe Mall</h2>
+    <p class="section-subtitle">Your Premier Lifestyle Destination</p>
+    <div class="about-content">
+        <p>Nestled in the heart of the city, Luxe Mall stands as the ultimate luxury lifestyle destination. Within its elegant confines, you'll discover exclusive retail journeys enveloped by a captivating ambiance. Whether your desire is a sophisticated shopping experience or a culinary adventure, Luxe Mall serves up a medley of meticulously curated experiences, tailored to satisfy all your needs.</p>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <div class="stat-number" data-target="200">0</div>
+            <div class="stat-label">Premium Brands</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" data-target="50">0</div>
+            <div class="stat-label">Dining Options</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" data-target="5">0</div>
+            <div class="stat-label">Million Visitors</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" data-target="24">0</div>
+            <div class="stat-label">Services</div>
+        </div>
+    </div>
+</section>
+
+<!-- Brands Section -->
+<section id="brands">
+    <h2 class="section-title">Discover The Brands</h2>
+    <p class="section-subtitle">Curated Collection of Premium Brands</p>
+    
+    <!-- Filter Buttons -->
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterBrands('all')">All</button>
+        <button class="filter-btn" onclick="filterBrands('luxury')">Luxury</button>
+        <button class="filter-btn" onclick="filterBrands('fashion')">Fashion</button>
+        <button class="filter-btn" onclick="filterBrands('electronics')">Electronics</button>
+        <button class="filter-btn" onclick="filterBrands('beauty')">Beauty</button>
+        <button class="filter-btn" onclick="filterBrands('jewellery')">Jewellery</button>
+        <button class="filter-btn" onclick="filterBrands('sports')">Sports</button>
+        <button class="filter-btn" onclick="filterBrands('accessories')">Accessories</button>
+        <button class="filter-btn" onclick="filterBrands('home')">Home</button>
+        <button class="filter-btn" onclick="filterBrands('kids')">Kids</button>
+        <button class="filter-btn" onclick="filterBrands('books')">Books</button>
+    </div>
+    
+    <div class="brands-grid" id="brandsContainer">
+        
+        <div class="brand-card" data-category="luxury">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800" alt="Gucci">
+            <div class="brand-info">
+                <h3>Gucci</h3>
+                <p class="brand-category">Luxury Fashion</p>
+                <p class="brand-floor">Floor 2</p>
+                <button class="view-details-btn" onclick="openModal('Gucci', 'Luxury Fashion', 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800', 'Floor 2', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="luxury">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800" alt="Louis Vuitton">
+            <div class="brand-info">
+                <h3>Louis Vuitton</h3>
+                <p class="brand-category">Luxury Accessories</p>
+                <p class="brand-floor">Floor 2</p>
+                <button class="view-details-btn" onclick="openModal('Louis Vuitton', 'Luxury Accessories', 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800', 'Floor 2', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="fashion">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=800" alt="Zara">
+            <div class="brand-info">
+                <h3>Zara</h3>
+                <p class="brand-category">Contemporary Fashion</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('Zara', 'Contemporary Fashion', 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="sports">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800" alt="Nike">
+            <div class="brand-info">
+                <h3>Nike</h3>
+                <p class="brand-category">Sportswear</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('Nike', 'Sportswear', 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="electronics">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=800" alt="Apple">
+            <div class="brand-info">
+                <h3>Apple Store</h3>
+                <p class="brand-category">Technology</p>
+                <p class="brand-floor">Floor 3</p>
+                <button class="view-details-btn" onclick="openModal('Apple Store', 'Technology', 'https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=800', 'Floor 3', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="beauty">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800" alt="Sephora">
+            <div class="brand-info">
+                <h3>Sephora</h3>
+                <p class="brand-category">Beauty & Cosmetics</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('Sephora', 'Beauty & Cosmetics', 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="jewellery">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800" alt="Tanishq">
+            <div class="brand-info">
+                <h3>Tanishq</h3>
+                <p class="brand-category">Fine Jewellery</p>
+                <p class="brand-floor">Floor 2</p>
+                <button class="view-details-btn" onclick="openModal('Tanishq', 'Fine Jewellery', 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800', 'Floor 2', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="accessories">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=800" alt="Ray-Ban">
+            <div class="brand-info">
+                <h3>Ray-Ban</h3>
+                <p class="brand-category">Eyewear</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('Ray-Ban', 'Eyewear', 'https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="sports">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800" alt="Adidas">
+            <div class="brand-info">
+                <h3>Adidas</h3>
+                <p class="brand-category">Athletic Wear</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('Adidas', 'Athletic Wear', 'https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="luxury">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800" alt="Prada">
+            <div class="brand-info">
+                <h3>Prada</h3>
+                <p class="brand-category">Luxury Fashion</p>
+                <p class="brand-floor">Floor 2</p>
+                <button class="view-details-btn" onclick="openModal('Prada', 'Luxury Fashion', 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800', 'Floor 2', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="luxury">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?w=800" alt="Versace">
+            <div class="brand-info">
+                <h3>Versace</h3>
+                <p class="brand-category">Luxury Couture</p>
+                <p class="brand-floor">Floor 2</p>
+                <button class="view-details-btn" onclick="openModal('Versace', 'Luxury Couture', 'https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?w=800', 'Floor 2', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="luxury">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800" alt="Burberry">
+            <div class="brand-info">
+                <h3>Burberry</h3>
+                <p class="brand-category">British Luxury</p>
+                <p class="brand-floor">Floor 2</p>
+                <button class="view-details-btn" onclick="openModal('Burberry', 'British Luxury', 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800', 'Floor 2', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="fashion">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1558769132-cb1aea1f1c1?w=800" alt="H&M">
+            <div class="brand-info">
+                <h3>H&M</h3>
+                <p class="brand-category">Fast Fashion</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('H&M', 'Fast Fashion', 'https://images.unsplash.com/photo-1558769132-cb1aea1f1c1?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="fashion">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=800" alt="Mango">
+            <div class="brand-info">
+                <h3>Mango</h3>
+                <p class="brand-category">Contemporary Fashion</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('Mango', 'Contemporary Fashion', 'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="fashion">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800" alt="Forever 21">
+            <div class="brand-info">
+                <h3>Forever 21</h3>
+                <p class="brand-category">Trendy Fashion</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('Forever 21', 'Trendy Fashion', 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="fashion">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=800" alt="Uniqlo">
+            <div class="brand-info">
+                <h3>Uniqlo</h3>
+                <p class="brand-category">Casual Wear</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('Uniqlo', 'Casual Wear', 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="sports">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800" alt="Puma">
+            <div class="brand-info">
+                <h3>Puma</h3>
+                <p class="brand-category">Sportswear</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('Puma', 'Sportswear', 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="sports">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800" alt="Under Armour">
+            <div class="brand-info">
+                <h3>Under Armour</h3>
+                <p class="brand-category">Performance Wear</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('Under Armour', 'Performance Wear', 'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="sports">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800" alt="Reebok">
+            <div class="brand-info">
+                <h3>Reebok</h3>
+                <p class="brand-category">Fitness Apparel</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('Reebok', 'Fitness Apparel', 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="electronics">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800" alt="Samsung">
+            <div class="brand-info">
+                <h3>Samsung</h3>
+                <p class="brand-category">Electronics</p>
+                <p class="brand-floor">Floor 3</p>
+                <button class="view-details-btn" onclick="openModal('Samsung', 'Electronics', 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800', 'Floor 3', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="electronics">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=800" alt="Sony">
+            <div class="brand-info">
+                <h3>Sony</h3>
+                <p class="brand-category">Electronics & Gaming</p>
+                <p class="brand-floor">Floor 3</p>
+                <button class="view-details-btn" onclick="openModal('Sony', 'Electronics & Gaming', 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=800', 'Floor 3', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="electronics">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1588508065123-287b28e013da?w=800" alt="Bose">
+            <div class="brand-info">
+                <h3>Bose</h3>
+                <p class="brand-category">Audio Equipment</p>
+                <p class="brand-floor">Floor 3</p>
+                <button class="view-details-btn" onclick="openModal('Bose', 'Audio Equipment', 'https://images.unsplash.com/photo-1588508065123-287b28e013da?w=800', 'Floor 3', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="electronics">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800" alt="JBL">
+            <div class="brand-info">
+                <h3>JBL</h3>
+                <p class="brand-category">Audio & Speakers</p>
+                <p class="brand-floor">Floor 3</p>
+                <button class="view-details-btn" onclick="openModal('JBL', 'Audio & Speakers', 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800', 'Floor 3', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="beauty">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800" alt="MAC Cosmetics">
+            <div class="brand-info">
+                <h3>MAC Cosmetics</h3>
+                <p class="brand-category">Makeup & Beauty</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('MAC Cosmetics', 'Makeup & Beauty', 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="beauty">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=800" alt="The Body Shop">
+            <div class="brand-info">
+                <h3>The Body Shop</h3>
+                <p class="brand-category">Natural Beauty</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('The Body Shop', 'Natural Beauty', 'https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="beauty">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800" alt="Lush">
+            <div class="brand-info">
+                <h3>Lush</h3>
+                <p class="brand-category">Handmade Cosmetics</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('Lush', 'Handmade Cosmetics', 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="jewellery">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800" alt="Tiffany & Co">
+            <div class="brand-info">
+                <h3>Tiffany & Co</h3>
+                <p class="brand-category">Luxury Jewellery</p>
+                <p class="brand-floor">Floor 2</p>
+                <button class="view-details-btn" onclick="openModal('Tiffany & Co', 'Luxury Jewellery', 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800', 'Floor 2', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="jewellery">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800" alt="Cartier">
+            <div class="brand-info">
+                <h3>Cartier</h3>
+                <p class="brand-category">Fine Jewellery</p>
+                <p class="brand-floor">Floor 2</p>
+                <button class="view-details-btn" onclick="openModal('Cartier', 'Fine Jewellery', 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800', 'Floor 2', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="jewellery">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800" alt="Pandora">
+            <div class="brand-info">
+                <h3>Pandora</h3>
+                <p class="brand-category">Designer Jewellery</p>
+                <p class="brand-floor">Floor 2</p>
+                <button class="view-details-btn" onclick="openModal('Pandora', 'Designer Jewellery', 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800', 'Floor 2', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="accessories">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800" alt="Michael Kors">
+            <div class="brand-info">
+                <h3>Michael Kors</h3>
+                <p class="brand-category">Watches & Accessories</p>
+                <p class="brand-floor">Floor 2</p>
+                <button class="view-details-btn" onclick="openModal('Michael Kors', 'Watches & Accessories', 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800', 'Floor 2', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="accessories">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800" alt="Fossil">
+            <div class="brand-info">
+                <h3>Fossil</h3>
+                <p class="brand-category">Watches & Leather</p>
+                <p class="brand-floor">Floor 1</p>
+                <button class="view-details-btn" onclick="openModal('Fossil', 'Watches & Leather', 'https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800', 'Floor 1', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="accessories">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800" alt="Coach">
+            <div class="brand-info">
+                <h3>Coach</h3>
+                <p class="brand-category">Handbags & Accessories</p>
+                <p class="brand-floor">Floor 2</p>
+                <button class="view-details-btn" onclick="openModal('Coach', 'Handbags & Accessories', 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800', 'Floor 2', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="home">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800" alt="IKEA">
+            <div class="brand-info">
+                <h3>IKEA</h3>
+                <p class="brand-category">Home Furnishing</p>
+                <p class="brand-floor">Floor 3</p>
+                <button class="view-details-btn" onclick="openModal('IKEA', 'Home Furnishing', 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800', 'Floor 3', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="home">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800" alt="West Elm">
+            <div class="brand-info">
+                <h3>West Elm</h3>
+                <p class="brand-category">Modern Furniture</p>
+                <p class="brand-floor">Floor 3</p>
+                <button class="view-details-btn" onclick="openModal('West Elm', 'Modern Furniture', 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800', 'Floor 3', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="kids">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800" alt="Mothercare">
+            <div class="brand-info">
+                <h3>Mothercare</h3>
+                <p class="brand-category">Baby & Kids</p>
+                <p class="brand-floor">Floor 2</p>
+                <button class="view-details-btn" onclick="openModal('Mothercare', 'Baby & Kids', 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800', 'Floor 2', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="kids">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=800" alt="Toys R Us">
+            <div class="brand-info">
+                <h3>Toys R Us</h3>
+                <p class="brand-category">Toys & Games</p>
+                <p class="brand-floor">Floor 2</p>
+                <button class="view-details-btn" onclick="openModal('Toys R Us', 'Toys & Games', 'https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=800', 'Floor 2', '11:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+        <div class="brand-card" data-category="books">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800" alt="Barnes & Noble">
+            <div class="brand-info">
+                <h3>Barnes & Noble</h3>
+                <p class="brand-category">Books & Stationery</p>
+                <p class="brand-floor">Floor 2</p>
+                <button class="view-details-btn" onclick="openModal('Barnes & Noble', 'Books & Stationery', 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800', 'Floor 2', '10:00 AM - 9:30 PM')">View Details</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Parallax Section -->
+<section class="parallax-section">
+    <div class="parallax-content">
+        <h2>Experience Luxury Like Never Before</h2>
+        <p>Where Style Meets Sophistication</p>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section id="products" class="products-section">
+    <h2 class="section-title">Featured Products</h2>
+    <p class="section-subtitle">Handpicked Selection of Premium Items</p>
+    
+    <div class="products-grid" id="productsContainer">
+        
+        <div class="product-card">
+            <div class="product-badge">NEW</div>
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800" alt="Premium Watch">
+            <div class="product-info">
+                <p class="product-brand">Michael Kors</p>
+                <h3>Luxury Chronograph Watch</h3>
+                <div class="product-price">
+                    <span class="current-price">$299</span>
+                    <span class="original-price">$450</span>
+                </div>
+                <div class="product-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(128 reviews)</span>
+                </div>
+                <div class="product-actions">
+                    <button class="quick-view-btn" onclick="openProductModal('Luxury Chronograph Watch', 'Michael Kors', '$299', '$450', 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800')">Quick View</button>
+                    <button class="add-to-cart-btn" onclick="addToCart('Luxury Chronograph Watch', 299)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-badge">SALE</div>
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800" alt="Running Shoes">
+            <div class="product-info">
+                <p class="product-brand">Nike</p>
+                <h3>Air Max Performance Sneakers</h3>
+                <div class="product-price">
+                    <span class="current-price">$159</span>
+                    <span class="original-price">$220</span>
+                </div>
+                <div class="product-rating">
+                    <span class="stars">★★★★☆</span>
+                    <span class="rating-count">(256 reviews)</span>
+                </div>
+                <div class="product-actions">
+                    <button class="quick-view-btn" onclick="openProductModal('Air Max Performance Sneakers', 'Nike', '$159', '$220', 'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800')">Quick View</button>
+                    <button class="add-to-cart-btn" onclick="addToCart('Air Max Performance Sneakers', 159)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800" alt="Designer Handbag">
+            <div class="product-info">
+                <p class="product-brand">Coach</p>
+                <h3>Signature Leather Handbag</h3>
+                <div class="product-price">
+                    <span class="current-price">$495</span>
+                </div>
+                <div class="product-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(89 reviews)</span>
+                </div>
+                <div class="product-actions">
+                    <button class="quick-view-btn" onclick="openProductModal('Signature Leather Handbag', 'Coach', '$495', '', 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800')">Quick View</button>
+                    <button class="add-to-cart-btn" onclick="addToCart('Signature Leather Handbag', 495)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-badge">HOT</div>
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800" alt="Wireless Headphones">
+            <div class="product-info">
+                <p class="product-brand">Bose</p>
+                <h3>QuietComfort Headphones</h3>
+                <div class="product-price">
+                    <span class="current-price">$349</span>
+                    <span class="original-price">$399</span>
+                </div>
+                <div class="product-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(412 reviews)</span>
+                </div>
+                <div class="product-actions">
+                    <button class="quick-view-btn" onclick="openProductModal('QuietComfort Headphones', 'Bose', '$349', '$399', 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800')">Quick View</button>
+                    <button class="add-to-cart-btn" onclick="addToCart('QuietComfort Headphones', 349)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=800" alt="Sunglasses">
+            <div class="product-info">
+                <p class="product-brand">Ray-Ban</p>
+                <h3>Classic Aviator Sunglasses</h3>
+                <div class="product-price">
+                    <span class="current-price">$189</span>
+                </div>
+                <div class="product-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(324 reviews)</span>
+                </div>
+                <div class="product-actions">
+                    <button class="quick-view-btn" onclick="openProductModal('Classic Aviator Sunglasses', 'Ray-Ban', '$189', '', 'https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=800')">Quick View</button>
+                    <button class="add-to-cart-btn" onclick="addToCart('Classic Aviator Sunglasses', 189)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-badge">NEW</div>
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800" alt="Makeup Set">
+            <div class="product-info">
+                <p class="product-brand">Sephora</p>
+                <h3>Premium Makeup Collection</h3>
+                <div class="product-price">
+                    <span class="current-price">$129</span>
+                    <span class="original-price">$180</span>
+                </div>
+                <div class="product-rating">
+                    <span class="stars">★★★★☆</span>
+                    <span class="rating-count">(167 reviews)</span>
+                </div>
+                <div class="product-actions">
+                    <button class="quick-view-btn" onclick="openProductModal('Premium Makeup Collection', 'Sephora', '$129', '$180', 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800')">Quick View</button>
+                    <button class="add-to-cart-btn" onclick="addToCart('Premium Makeup Collection', 129)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800" alt="Diamond Ring">
+            <div class="product-info">
+                <p class="product-brand">Tiffany & Co</p>
+                <h3>Solitaire Diamond Ring</h3>
+                <div class="product-price">
+                    <span class="current-price">$2,499</span>
+                </div>
+                <div class="product-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(45 reviews)</span>
+                </div>
+                <div class="product-actions">
+                    <button class="quick-view-btn" onclick="openProductModal('Solitaire Diamond Ring', 'Tiffany & Co', '$2,499', '', 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800')">Quick View</button>
+                    <button class="add-to-cart-btn" onclick="addToCart('Solitaire Diamond Ring', 2499)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-badge">SALE</div>
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800" alt="Fashion Dress">
+            <div class="product-info">
+                <p class="product-brand">Zara</p>
+                <h3>Elegant Evening Dress</h3>
+                <div class="product-price">
+                    <span class="current-price">$89</span>
+                    <span class="original-price">$149</span>
+                </div>
+                <div class="product-rating">
+                    <span class="stars">★★★★☆</span>
+                    <span class="rating-count">(203 reviews)</span>
+                </div>
+                <div class="product-actions">
+                    <button class="quick-view-btn" onclick="openProductModal('Elegant Evening Dress', 'Zara', '$89', '$149', 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800')">Quick View</button>
+                    <button class="add-to-cart-btn" onclick="addToCart('Elegant Evening Dress', 89)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">🤍</div>
+            <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800" alt="Perfume">
+            <div class="product-info">
+                <p class="product-brand">Gucci</p>
+                <h3>Signature Eau de Parfum</h3>
+                <div class="product-price">
+                    <span class="current-price">$145</span>
+                </div>
+                <div class="product-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(289 reviews)</span>
+                </div>
+                <div class="product-actions">
+                    <button class="quick-view-btn" onclick="openProductModal('Signature Eau de Parfum', 'Gucci', '$145', '', 'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800')">Quick View</button>
+                    <button class="add-to-cart-btn" onclick="addToCart('Signature Eau de Parfum', 145)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Dining Section -->
+<section id="dining" class="dining">
+    <h2 class="section-title">Culinary Excellence</h2>
+    <p class="section-subtitle">Savor World-Class Dining Experiences</p>
+    <div class="dining-grid" id="diningContainer">
+        
+        <div class="dining-card">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800" alt="Fine Dining">
+            <h3>The Grand Bistro</h3>
+            <p>Continental Cuisine</p>
+        </div>
+
+        <div class="dining-card">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800" alt="Italian">
+            <h3>Bella Italia</h3>
+            <p>Authentic Italian</p>
+        </div>
+
+        <div class="dining-card">
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800" alt="Cafe">
+            <h3>Starbucks Reserve</h3>
+            <p>Premium Coffee</p>
+        </div>
+
+        <div class="dining-card">
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800" alt="Asian">
+            <h3>Zen Garden</h3>
+            <p>Pan-Asian Fusion</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services">
+    <h2 class="section-title">Premium Services</h2>
+    <p class="section-subtitle">Enhancing Your Shopping Experience</p>
+    <div class="services-grid">
+        
+        <div class="service-item">
+            <div class="service-icon">🚗</div>
+            <h3>Valet Parking</h3>
+            <p>Complimentary valet service for your convenience</p>
+        </div>
+
+        <div class="service-item">
+            <div class="service-icon">👶</div>
+            <h3>Baby Care Room</h3>
+            <p>Comfortable facilities for parents and infants</p>
+        </div>
+
+        <div class="service-item">
+            <div class="service-icon">🎬</div>
+            <h3>PVR Cinemas</h3>
+            <p>Premium movie experience with luxury seating</p>
+        </div>
+
+        <div class="service-item">
+            <div class="service-icon">🎮</div>
+            <h3>Entertainment Zone</h3>
+            <p>Gaming and VR experiences for all ages</p>
+        </div>
+
+        <div class="service-item">
+            <div class="service-icon">✂️</div>
+            <h3>Garment Alteration</h3>
+            <p>Professional tailoring services</p>
+        </div>
+
+        <div class="service-item">
+            <div class="service-icon">🐕</div>
+            <h3>Pet Care</h3>
+            <p>Pet-friendly facilities and services</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Luxe Mall</h3>
+            <p>Your premier luxury lifestyle destination in the heart of the city.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Hours</h3>
+            <p>Mall: 11 AM – 9:30 PM</p>
+            <p>Restaurants: 11 AM – 11:30 PM</p>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="#brands">Shop</a>
+            <a href="#dining">Dine</a>
+            <a href="#services">Services</a>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Phone: +1 234 567 8900</p>
+            <p>Email: info@luxemall.com</p>
+            <a href="#">Get Directions</a>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2026 Luxe Mall. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Modal -->
+<div id="brandModal" class="modal" onclick="closeModalOutside(event)">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <img id="modalImage" class="modal-image" src="" alt="">
+        <div class="modal-body">
+            <h2 id="modalTitle"></h2>
+            <span id="modalCategory" class="category"></span>
+            <p id="modalDescription">Discover an exclusive collection of premium products crafted with excellence. Experience world-class service and unparalleled quality at our store.</p>
+            
+            <div class="modal-details">
+                <div class="detail-item">
+                    <div class="detail-icon">📍</div>
+                    <div class="detail-text">
+                        <h4>Location</h4>
+                        <p id="modalFloor"></p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">🕐</div>
+                    <div class="detail-text">
+                        <h4>Hours</h4>
+                        <p id="modalHours"></p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">📞</div>
+                    <div class="detail-text">
+                        <h4>Contact</h4>
+                        <p>+1 234 567 8900</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">🎁</div>
+                    <div class="detail-text">
+                        <h4>Offers</h4>
+                        <p>Special Deals Available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+<!-- My Orders Modal -->
+<div id="ordersModal" class="orders-modal" onclick="closeOrdersOutside(event)">
+    <div class="orders-container" onclick="event.stopPropagation()">
+        <div class="orders-header">
+            <h2>My Orders</h2>
+            <span class="close-orders" onclick="closeMyOrders()">&times;</span>
+        </div>
+        <div class="orders-body">
+            <div id="ordersEmpty" class="orders-empty">
+                <div class="orders-empty-icon">📦</div>
+                <h3>No orders yet</h3>
+                <p>Start shopping to see your orders here!</p>
+            </div>
+            <div id="ordersList"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Shopping Cart Modal -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-modal" id="cartModal">
+    <div class="cart-header">
+        <h2>Shopping Cart</h2>
+        <span class="close-cart" onclick="closeCart()">&times;</span>
+    </div>
+    <div class="cart-body">
+        <div id="cartEmpty" class="cart-empty">
+            <div class="cart-empty-icon">🛒</div>
+            <h3>Your cart is empty</h3>
+            <p>Add some products to get started!</p>
+        </div>
+        <div id="cartItems" class="cart-items" style="display: none;"></div>
+        <div id="cartSummary" class="cart-summary" style="display: none;">
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="subtotal">$0</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax (10%):</span>
+                <span id="tax">$0</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping:</span>
+                <span id="shipping">Free</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span id="total">$0</span>
+            </div>
+            <button class="checkout-btn" onclick="openCheckout()">Proceed to Checkout</button>
+            <button class="continue-shopping" onclick="closeCart()">Continue Shopping</button>
+        </div>
+    </div>
+</div>
+
+<!-- Checkout Modal -->
+<div id="checkoutModal" class="checkout-modal" onclick="closeCheckoutOutside(event)">
+    <div class="checkout-container" onclick="event.stopPropagation()">
+        <div class="checkout-header">
+            <span class="close-checkout" onclick="closeCheckout()">&times;</span>
+            <h2>Checkout</h2>
+            <p>Complete Your Purchase</p>
+        </div>
+        <div class="checkout-body">
+            <!-- Progress Steps -->
+            <div class="checkout-steps">
+                <div class="checkout-step active" id="step1">
+                    <div class="step-circle">1</div>
+                    <div class="step-label">Shipping</div>
+                </div>
+                <div class="checkout-step" id="step2">
+                    <div class="step-circle">2</div>
+                    <div class="step-label">Payment</div>
+                </div>
+                <div class="checkout-step" id="step3">
+                    <div class="step-circle">3</div>
+                    <div class="step-label">Review</div>
+                </div>
+            </div>
+            
+            <!-- Step 1: Shipping Information -->
+            <div id="shippingStep" class="checkout-content active">
+                <div class="checkout-section">
+                    <h3>Shipping Information</h3>
+                    <form id="shippingForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name *</label>
+                                <input type="text" id="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name *</label>
+                                <input type="text" id="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number *</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Street Address *</label>
+                            <input type="text" id="address" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>City *</label>
+                                <input type="text" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label>State/Province *</label>
+                                <input type="text" id="state" required>
+                            </div>
+                            <div class="form-group">
+                                <label>ZIP/Postal Code *</label>
+                                <input type="text" id="zip" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="checkout-actions">
+                    <button class="btn-secondary" onclick="closeCheckout()">Back to Cart</button>
+                    <button class="btn-primary" onclick="goToPayment()">Continue to Payment</button>
+                </div>
+            </div>
+            
+            <!-- Step 2: Payment Information -->
+            <div id="paymentStep" class="checkout-content">
+                <div class="checkout-section">
+                    <h3>Payment Information</h3>
+                    <form id="paymentForm">
+                        <div class="form-group">
+                            <label>Card Number *</label>
+                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Cardholder Name *</label>
+                            <input type="text" id="cardName" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Expiry Date *</label>
+                                <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
+                            </div>
+                            <div class="form-group">
+                                <label>CVV *</label>
+                                <input type="text" id="cvv" placeholder="123" maxlength="3" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="checkout-actions">
+                    <button class="btn-secondary" onclick="backToShipping()">Back</button>
+                    <button class="btn-primary" onclick="goToReview()">Review Order</button>
+                </div>
+            </div>
+            
+            <!-- Step 3: Review Order -->
+            <div id="reviewStep" class="checkout-content">
+                <div class="checkout-section">
+                    <h3>Order Summary</h3>
+                    <div class="order-summary-box" id="reviewOrderSummary"></div>
+                </div>
+                <div class="checkout-section">
+                    <h3>Shipping Address</h3>
+                    <div class="order-summary-box" id="reviewShippingAddress"></div>
+                </div>
+                <div class="checkout-section">
+                    <h3>Payment Method</h3>
+                    <div class="order-summary-box" id="reviewPaymentMethod"></div>
+                </div>
+                <div class="checkout-actions">
+                    <button class="btn-secondary" onclick="backToPayment()">Back</button>
+                    <button class="btn-primary" onclick="placeOrder()">Place Order</button>
+                </div>
+            </div>
+            
+            <!-- Order Success -->
+            <div id="successStep" class="checkout-content">
+                <div class="order-success">
+                    <div class="success-icon">✓</div>
+                    <h2>Order Placed Successfully!</h2>
+                    <p class="order-number" id="orderNumber"></p>
+                    <p>Thank you for shopping at Luxe Mall. You will receive a confirmation email shortly.</p>
+                    <button class="btn-primary" style="margin-top: 30px; max-width: 300px;" onclick="finishCheckout()">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tenant Login Modal -->
+<div id="tenantLoginModal" class="login-modal" onclick="closeTenantLoginOutside(event)">
+    <div class="login-container" onclick="event.stopPropagation()">
+        <div class="login-header">
+            <span class="close-login" onclick="closeTenantLogin()">&times;</span>
+            <h2>Tenant Portal</h2>
+            <p>Manage Your Store</p>
+        </div>
+        <div class="login-body">
+            <div class="login-tabs">
+                <button class="login-tab active" onclick="switchTab('login')">Login</button>
+                <button class="login-tab" onclick="switchTab('register')">Register</button>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="loginForm" class="login-form active" onsubmit="handleTenantLogin(event)">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="login-btn">Login to Dashboard</button>
+                <div class="forgot-password">
+                    <a href="#" onclick="alert('Password reset feature coming soon!'); return false;">Forgot Password?</a>
+                </div>
+            </form>
+            
+            <!-- Register Form -->
+            <form id="registerForm" class="login-form" onsubmit="handleTenantRegister(event)">
+                <div class="form-group">
+                    <label>Store Name</label>
+                    <input type="text" id="storeName" placeholder="Enter store name" required>
+                </div>
+                <div class="form-group">
+                    <label>Store Category</label>
+                    <select id="storeCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="luxury">Luxury Fashion</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="beauty">Beauty & Cosmetics</option>
+                        <option value="jewellery">Jewellery</option>
+                        <option value="sports">Sports & Fitness</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="home">Home & Furniture</option>
+                        <option value="kids">Kids & Toys</option>
+                        <option value="books">Books & Stationery</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="registerEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="registerPhone" placeholder="Enter phone number" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="registerPassword" placeholder="Create password" required>
+                </div>
+                <button type="submit" class="login-btn">Register Store</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Tenant Dashboard -->
+<div id="tenantDashboard" class="tenant-dashboard">
+    <div class="dashboard-header">
+        <h2>Tenant Dashboard</h2>
+        <button class="logout-btn" onclick="handleLogout()">Logout</button>
+    </div>
+    <div class="dashboard-content">
+        <div class="tenant-info">
+            <h3>Store Information</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Store Name</div>
+                    <div class="info-value" id="dashStoreName">-</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Category</div>
+                    <div class="info-value" id="dashCategory">-</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Email</div>
+                    <div class="info-value" id="dashEmail">-</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Floor Location</div>
+                    <div class="info-value" id="dashFloor">Floor 2</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h3>Monthly Sales</h3>
+                <div class="stat">$45,280</div>
+            </div>
+            <div class="dashboard-card">
+                <h3>Total Orders</h3>
+                <div class="stat">342</div>
+            </div>
+            <div class="dashboard-card">
+                <h3>Visitors</h3>
+                <div class="stat">1,245</div>
+            </div>
+            <div class="dashboard-card">
+                <h3>Rating</h3>
+                <div class="stat">4.8★</div>
+            </div>
+        </div>
+        
+        <div class="tenant-info">
+            <h3>Quick Actions</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+                <button class="login-btn" onclick="showAddProduct()">Add Product</button>
+                <button class="login-btn" onclick="showOrders()">View Orders</button>
+                <button class="login-btn" onclick="showInventory()">Manage Inventory</button>
+                <button class="login-btn" onclick="showAnalytics()">View Analytics</button>
+            </div>
+        </div>
+        
+        <!-- Add Product Section -->
+        <div id="addProductSection" class="tenant-info" style="display: none;">
+            <h3>Add New Product</h3>
+            <form onsubmit="handleAddProduct(event)" style="max-width: 600px;">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" id="productName" placeholder="Enter product name" required>
+                </div>
+                <div class="form-group">
+                    <label>Product Category</label>
+                    <select id="productCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="shoes">Shoes</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="beauty">Beauty</option>
+                        <option value="jewellery">Jewellery</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Price ($)</label>
+                    <input type="number" id="productPrice" placeholder="Enter price" required>
+                </div>
+                <div class="form-group">
+                    <label>Stock Quantity</label>
+                    <input type="number" id="productStock" placeholder="Enter quantity" required>
+                </div>
+                <div class="form-group">
+                    <label>Product Description</label>
+                    <input type="text" id="productDescription" placeholder="Enter description" required>
+                </div>
+                <button type="submit" class="login-btn">Add Product</button>
+                <button type="button" class="login-btn" style="background: #666; margin-top: 10px;" onclick="hideAddProduct()">Cancel</button>
+            </form>
+        </div>
+        
+        <!-- Orders Section -->
+        <div id="ordersSection" class="tenant-info" style="display: none;">
+            <h3>Recent Orders</h3>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                    <thead>
+                        <tr style="background: var(--light); text-align: left;">
+                            <th style="padding: 15px; border-bottom: 2px solid #ddd;">Order ID</th>
+                            <th style="padding: 15px; border-bottom: 2px solid #ddd;">Product</th>
+                            <th style="padding: 15px; border-bottom: 2px solid #ddd;">Customer</th>
+                            <th style="padding: 15px; border-bottom: 2px solid #ddd;">Amount</th>
+                            <th style="padding: 15px; border-bottom: 2px solid #ddd;">Status</th>
+                            <th style="padding: 15px; border-bottom: 2px solid #ddd;">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody">
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">#ORD-1001</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">Premium Watch</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">John Smith</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">$299</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;"><span style="background: #4CAF50; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">Completed</span></td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">2026-04-10</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">#ORD-1002</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">Designer Handbag</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">Sarah Johnson</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">$495</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;"><span style="background: #FF9800; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">Processing</span></td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">2026-04-11</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">#ORD-1003</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">Sunglasses</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">Mike Davis</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">$189</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;"><span style="background: #2196F3; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">Shipped</span></td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">2026-04-11</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="login-btn" style="margin-top: 20px;" onclick="hideOrders()">Back to Dashboard</button>
+        </div>
+        
+        <!-- Inventory Section -->
+        <div id="inventorySection" class="tenant-info" style="display: none;">
+            <h3>Inventory Management</h3>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                    <thead>
+                        <tr style="background: var(--light); text-align: left;">
+                            <th style="padding: 15px; border-bottom: 2px solid #ddd;">Product</th>
+                            <th style="padding: 15px; border-bottom: 2px solid #ddd;">SKU</th>
+                            <th style="padding: 15px; border-bottom: 2px solid #ddd;">Stock</th>
+                            <th style="padding: 15px; border-bottom: 2px solid #ddd;">Price</th>
+                            <th style="padding: 15px; border-bottom: 2px solid #ddd;">Status</th>
+                            <th style="padding: 15px; border-bottom: 2px solid #ddd;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryTableBody">
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">Luxury Chronograph Watch</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">SKU-001</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">45</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">$299</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;"><span style="background: #4CAF50; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">In Stock</span></td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;"><button style="padding: 5px 15px; background: var(--secondary); color: white; border: none; cursor: pointer; border-radius: 4px;" onclick="alert('Edit feature coming soon!')">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">Designer Handbag</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">SKU-002</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">8</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">$495</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;"><span style="background: #FF9800; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">Low Stock</span></td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;"><button style="padding: 5px 15px; background: var(--secondary); color: white; border: none; cursor: pointer; border-radius: 4px;" onclick="alert('Edit feature coming soon!')">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">Classic Aviator Sunglasses</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">SKU-003</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">120</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;">$189</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;"><span style="background: #4CAF50; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">In Stock</span></td>
+                            <td style="padding: 15px; border-bottom: 1px solid #eee;"><button style="padding: 5px 15px; background: var(--secondary); color: white; border: none; cursor: pointer; border-radius: 4px;" onclick="alert('Edit feature coming soon!')">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="login-btn" style="margin-top: 20px;" onclick="hideInventory()">Back to Dashboard</button>
+        </div>
+        
+        <!-- Analytics Section -->
+        <div id="analyticsSection" class="tenant-info" style="display: none;">
+            <h3>Store Analytics</h3>
+            <div class="dashboard-grid" style="margin-top: 20px;">
+                <div class="dashboard-card">
+                    <h3>Today's Sales</h3>
+                    <div class="stat">$2,340</div>
+                    <p style="color: #4CAF50; margin-top: 10px; font-size: 14px;">↑ 12% from yesterday</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3>This Week</h3>
+                    <div class="stat">$12,450</div>
+                    <p style="color: #4CAF50; margin-top: 10px; font-size: 14px;">↑ 8% from last week</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3>This Month</h3>
+                    <div class="stat">$45,280</div>
+                    <p style="color: #4CAF50; margin-top: 10px; font-size: 14px;">↑ 15% from last month</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Conversion Rate</h3>
+                    <div class="stat">3.2%</div>
+                    <p style="color: #FF9800; margin-top: 10px; font-size: 14px;">↓ 0.5% from last month</p>
+                </div>
+            </div>
+            <div style="margin-top: 30px; background: white; padding: 30px; border-radius: 8px;">
+                <h4 style="margin-bottom: 20px;">Top Selling Products</h4>
+                <div style="display: grid; gap: 15px;">
+                    <div style="display: flex; justify-content: space-between; padding: 15px; background: var(--light); border-radius: 4px;">
+                        <span>Luxury Chronograph Watch</span>
+                        <span style="font-weight: 700; color: var(--secondary);">89 sold</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 15px; background: var(--light); border-radius: 4px;">
+                        <span>Designer Handbag</span>
+                        <span style="font-weight: 700; color: var(--secondary);">67 sold</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 15px; background: var(--light); border-radius: 4px;">
+                        <span>Classic Aviator Sunglasses</span>
+                        <span style="font-weight: 700; color: var(--secondary);">54 sold</span>
+                    </div>
+                </div>
+            </div>
+            <button class="login-btn" style="margin-top: 20px;" onclick="hideAnalytics()">Back to Dashboard</button>
+        </div>
+    </div>
+</div>
+
+<script>
+// Search Functionality
+function searchContent() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const brandCards = document.querySelectorAll('.brand-card');
+    const diningCards = document.querySelectorAll('.dining-card');
+    
+    brandCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(input) ? 'block' : 'none';
+    });
+    
+    diningCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(input) ? 'block' : 'none';
+    });
+}
+
+// Filter Brands
+function filterBrands(category) {
+    const cards = document.querySelectorAll('.brand-card');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    // Update active button
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    // Filter cards with animation
+    cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'block';
+            card.style.animation = 'fadeInUp 0.5s ease';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Modal Functions
+function openModal(title, category, image, floor, hours) {
+    const modal = document.getElementById('brandModal');
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalCategory').textContent = category;
+    document.getElementById('modalImage').src = image;
+    document.getElementById('modalFloor').textContent = floor;
+    document.getElementById('modalHours').textContent = hours;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('brandModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function closeModalOutside(event) {
+    if (event.target.id === 'brandModal') {
+        closeModal();
+    }
+}
+
+// Escape key to close modal
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Favorite Toggle
+function toggleFavorite(element) {
+    if (element.textContent === '🤍') {
+        element.textContent = '❤️';
+        // Save to localStorage
+        const parentCard = element.closest('.brand-card, .product-card');
+        const itemName = parentCard.querySelector('h3').textContent;
+        let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+        favorites.push(itemName);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    } else {
+        element.textContent = '🤍';
+        // Remove from localStorage
+        const parentCard = element.closest('.brand-card, .product-card');
+        const itemName = parentCard.querySelector('h3').textContent;
+        let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+        favorites = favorites.filter(fav => fav !== itemName);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+}
+
+// Load favorites on page load
+window.addEventListener('DOMContentLoaded', function() {
+    const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    document.querySelectorAll('.brand-card, .product-card').forEach(card => {
+        const itemName = card.querySelector('h3').textContent;
+        const favBtn = card.querySelector('.favorite-btn');
+        if (favBtn && favorites.includes(itemName)) {
+            favBtn.textContent = '❤️';
+        }
+    });
+});
+
+// Product Modal
+function openProductModal(title, brand, price, originalPrice, image) {
+    const modal = document.getElementById('brandModal');
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalCategory').textContent = brand;
+    document.getElementById('modalImage').src = image;
+    document.getElementById('modalFloor').textContent = price;
+    document.getElementById('modalHours').textContent = originalPrice || 'Best Price';
+    
+    const description = document.getElementById('modalDescription');
+    description.textContent = 'Premium quality product with exceptional craftsmanship. Experience luxury and style with this exclusive item from our curated collection.';
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+// Add to Cart
+let cartCount = 0;
+let cartItems = [];
+
+function addToCart(productName, price) {
+    // Ensure price is a number
+    const numPrice = typeof price === 'string' ? parseFloat(price.replace('$', '')) : parseFloat(price);
+    
+    if (isNaN(numPrice)) {
+        console.error('Invalid price:', price);
+        return;
+    }
+    
+    // Add to cart array
+    const existingItem = cartItems.find(item => item.name === productName);
+    
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cartItems.push({
+            name: productName,
+            price: numPrice,
+            quantity: 1,
+            image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400'
+        });
+    }
+    
+    // Update cart count
+    cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById('cartCount').textContent = cartCount;
+    
+    // Save to localStorage
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    
+    // Show notification
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 30px;
+        background: var(--secondary);
+        color: white;
+        padding: 20px 30px;
+        border-radius: 8px;
+        z-index: 9999;
+        animation: slideIn 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    `;
+    notification.innerHTML = `
+        <strong>✓ Added to Cart</strong><br>
+        <span style="font-size: 14px;">${productName} - $${numPrice.toFixed(2)}</span>
+    `;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+    }, 2000);
+}
+
+// Open Cart
+function openCart() {
+    document.getElementById('cartModal').classList.add('open');
+    document.getElementById('cartOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    renderCart();
+}
+
+// Close Cart
+function closeCart() {
+    document.getElementById('cartModal').classList.remove('open');
+    document.getElementById('cartOverlay').classList.remove('open');
+    document.body.style.overflow = 'auto';
+}
+
+// Render Cart
+function renderCart() {
+    const cartItemsContainer = document.getElementById('cartItems');
+    const cartEmpty = document.getElementById('cartEmpty');
+    const cartSummary = document.getElementById('cartSummary');
+    
+    if (cartItems.length === 0) {
+        cartEmpty.style.display = 'block';
+        cartItemsContainer.style.display = 'none';
+        cartSummary.style.display = 'none';
+        return;
+    }
+    
+    cartEmpty.style.display = 'none';
+    cartItemsContainer.style.display = 'flex';
+    cartSummary.style.display = 'block';
+    
+    // Render items
+    cartItemsContainer.innerHTML = cartItems.map((item, index) => {
+        const itemPrice = parseFloat(item.price) || 0;
+        const itemQuantity = parseInt(item.quantity) || 1;
+        const itemTotal = itemPrice * itemQuantity;
+        
+        return `
+        <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}" class="cart-item-image" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400'">
+            <div class="cart-item-details">
+                <div class="cart-item-name">${item.name}</div>
+                <div class="cart-item-brand">Premium Quality</div>
+                <div class="cart-item-price">$${itemPrice.toFixed(2)} × ${itemQuantity} = $${itemTotal.toFixed(2)}</div>
+                <div class="cart-item-quantity">
+                    <button class="qty-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                    <span class="qty-display">${itemQuantity}</span>
+                    <button class="qty-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                </div>
+            </div>
+            <span class="remove-item" onclick="removeFromCart(${index})">×</span>
+        </div>
+        `;
+    }).join('');
+    
+    // Calculate totals with validation
+    const subtotal = cartItems.reduce((sum, item) => {
+        const price = parseFloat(item.price) || 0;
+        const quantity = parseInt(item.quantity) || 1;
+        return sum + (price * quantity);
+    }, 0);
+    
+    const tax = subtotal * 0.1;
+    const total = subtotal + tax;
+    
+    document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+    document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+    document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+}
+
+// Update Quantity
+function updateQuantity(index, change) {
+    if (!cartItems[index]) return;
+    
+    cartItems[index].quantity = parseInt(cartItems[index].quantity) + change;
+    
+    if (cartItems[index].quantity <= 0) {
+        cartItems.splice(index, 1);
+    }
+    
+    // Update cart count
+    cartCount = cartItems.reduce((sum, item) => sum + parseInt(item.quantity || 1), 0);
+    document.getElementById('cartCount').textContent = cartCount;
+    
+    // Save to localStorage
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    
+    renderCart();
+}
+
+// Remove from Cart
+function removeFromCart(index) {
+    if (!cartItems[index]) return;
+    
+    cartItems.splice(index, 1);
+    
+    // Update cart count
+    cartCount = cartItems.reduce((sum, item) => sum + parseInt(item.quantity || 1), 0);
+    document.getElementById('cartCount').textContent = cartCount;
+    
+    // Save to localStorage
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    
+    renderCart();
+}
+
+// Checkout
+function handleCheckout() {
+    if (cartItems.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
+    openCheckout();
+}
+
+function openCheckout() {
+    closeCart();
+    document.getElementById('checkoutModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    resetCheckoutSteps();
+}
+
+function closeCheckout() {
+    document.getElementById('checkoutModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function closeCheckoutOutside(event) {
+    if (event.target.id === 'checkoutModal') {
+        closeCheckout();
+    }
+}
+
+function resetCheckoutSteps() {
+    // Reset all steps
+    document.querySelectorAll('.checkout-step').forEach(step => {
+        step.classList.remove('active', 'completed');
+    });
+    document.querySelectorAll('.checkout-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // Activate first step
+    document.getElementById('step1').classList.add('active');
+    document.getElementById('shippingStep').classList.add('active');
+}
+
+function goToPayment() {
+    // Validate shipping form
+    const form = document.getElementById('shippingForm');
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+    
+    // Update steps
+    document.getElementById('step1').classList.remove('active');
+    document.getElementById('step1').classList.add('completed');
+    document.getElementById('step2').classList.add('active');
+    
+    // Update content
+    document.getElementById('shippingStep').classList.remove('active');
+    document.getElementById('paymentStep').classList.add('active');
+}
+
+function backToShipping() {
+    document.getElementById('step2').classList.remove('active');
+    document.getElementById('step1').classList.remove('completed');
+    document.getElementById('step1').classList.add('active');
+    
+    document.getElementById('paymentStep').classList.remove('active');
+    document.getElementById('shippingStep').classList.add('active');
+}
+
+function goToReview() {
+    // Validate payment form
+    const form = document.getElementById('paymentForm');
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+    
+    // Update steps
+    document.getElementById('step2').classList.remove('active');
+    document.getElementById('step2').classList.add('completed');
+    document.getElementById('step3').classList.add('active');
+    
+    // Update content
+    document.getElementById('paymentStep').classList.remove('active');
+    document.getElementById('reviewStep').classList.add('active');
+    
+    // Populate review
+    populateReview();
+}
+
+function backToPayment() {
+    document.getElementById('step3').classList.remove('active');
+    document.getElementById('step2').classList.remove('completed');
+    document.getElementById('step2').classList.add('active');
+    
+    document.getElementById('reviewStep').classList.remove('active');
+    document.getElementById('paymentStep').classList.add('active');
+}
+
+function populateReview() {
+    // Order Summary
+    const subtotal = cartItems.reduce((sum, item) => {
+        const price = parseFloat(item.price) || 0;
+        const quantity = parseInt(item.quantity) || 1;
+        return sum + (price * quantity);
+    }, 0);
+    const tax = subtotal * 0.1;
+    const total = subtotal + tax;
+    
+    const orderSummaryHTML = cartItems.map(item => {
+        const itemPrice = parseFloat(item.price) || 0;
+        const itemQuantity = parseInt(item.quantity) || 1;
+        return `
+            <div class="summary-item">
+                <div class="summary-item-details">
+                    <div class="summary-item-name">${item.name}</div>
+                    <div class="summary-item-qty">Quantity: ${itemQuantity}</div>
+                </div>
+                <div class="summary-item-price">$${(itemPrice * itemQuantity).toFixed(2)}</div>
+            </div>
+        `;
+    }).join('') + `
+        <div class="summary-item">
+            <div class="summary-item-details"><strong>Subtotal</strong></div>
+            <div class="summary-item-price">$${subtotal.toFixed(2)}</div>
+        </div>
+        <div class="summary-item">
+            <div class="summary-item-details"><strong>Tax (10%)</strong></div>
+            <div class="summary-item-price">$${tax.toFixed(2)}</div>
+        </div>
+        <div class="summary-item">
+            <div class="summary-item-details"><strong>Shipping</strong></div>
+            <div class="summary-item-price">Free</div>
+        </div>
+        <div class="summary-item">
+            <div class="summary-item-details"><strong style="font-size: 18px;">Total</strong></div>
+            <div class="summary-item-price" style="font-size: 20px;">$${total.toFixed(2)}</div>
+        </div>
+    `;
+    document.getElementById('reviewOrderSummary').innerHTML = orderSummaryHTML;
+    
+    // Shipping Address
+    const shippingHTML = `
+        <p><strong>${document.getElementById('firstName').value} ${document.getElementById('lastName').value}</strong></p>
+        <p>${document.getElementById('address').value}</p>
+        <p>${document.getElementById('city').value}, ${document.getElementById('state').value} ${document.getElementById('zip').value}</p>
+        <p>Email: ${document.getElementById('email').value}</p>
+        <p>Phone: ${document.getElementById('phone').value}</p>
+    `;
+    document.getElementById('reviewShippingAddress').innerHTML = shippingHTML;
+    
+    // Payment Method
+    const cardNumber = document.getElementById('cardNumber').value;
+    const maskedCard = '**** **** **** ' + cardNumber.slice(-4);
+    const paymentHTML = `
+        <p><strong>Credit Card</strong></p>
+        <p>${maskedCard}</p>
+        <p>Expires: ${document.getElementById('expiry').value}</p>
+    `;
+    document.getElementById('reviewPaymentMethod').innerHTML = paymentHTML;
+}
+
+function placeOrder() {
+    // Generate order number
+    const orderNumber = 'ORD-' + Date.now().toString().slice(-8);
+    document.getElementById('orderNumber').textContent = 'Order #' + orderNumber;
+    
+    // Calculate totals
+    const subtotal = cartItems.reduce((sum, item) => {
+        const price = parseFloat(item.price) || 0;
+        const quantity = parseInt(item.quantity) || 1;
+        return sum + (price * quantity);
+    }, 0);
+    const tax = subtotal * 0.1;
+    const total = subtotal + tax;
+    
+    // Save order to localStorage
+    const order = {
+        orderNumber: orderNumber,
+        date: new Date().toISOString(),
+        items: [...cartItems],
+        subtotal: subtotal,
+        tax: tax,
+        total: total,
+        status: 'processing',
+        shipping: {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            address: document.getElementById('address').value,
+            city: document.getElementById('city').value,
+            state: document.getElementById('state').value,
+            zip: document.getElementById('zip').value
+        }
+    };
+    
+    let orders = JSON.parse(localStorage.getItem('customerOrders') || '[]');
+    orders.unshift(order); // Add to beginning
+    localStorage.setItem('customerOrders', JSON.stringify(orders));
+    
+    // Update steps
+    document.getElementById('step3').classList.remove('active');
+    document.getElementById('step3').classList.add('completed');
+    
+    // Show success
+    document.getElementById('reviewStep').classList.remove('active');
+    document.getElementById('successStep').classList.add('active');
+    
+    // Clear cart
+    cartItems = [];
+    cartCount = 0;
+    document.getElementById('cartCount').textContent = '0';
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+}
+
+function finishCheckout() {
+    closeCheckout();
+    // Reset forms
+    document.getElementById('shippingForm').reset();
+    document.getElementById('paymentForm').reset();
+}
+
+// My Orders Functions
+function openMyOrders() {
+    document.getElementById('ordersModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    renderOrders();
+}
+
+function closeMyOrders() {
+    document.getElementById('ordersModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function closeOrdersOutside(event) {
+    if (event.target.id === 'ordersModal') {
+        closeMyOrders();
+    }
+}
+
+function renderOrders() {
+    const orders = JSON.parse(localStorage.getItem('customerOrders') || '[]');
+    const ordersEmpty = document.getElementById('ordersEmpty');
+    const ordersList = document.getElementById('ordersList');
+    
+    if (orders.length === 0) {
+        ordersEmpty.style.display = 'block';
+        ordersList.innerHTML = '';
+        return;
+    }
+    
+    ordersEmpty.style.display = 'none';
+    
+    ordersList.innerHTML = orders.map((order, index) => {
+        const orderDate = new Date(order.date);
+        const formattedDate = orderDate.toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+        
+        const statusClass = order.status || 'processing';
+        const statusText = order.status === 'completed' ? 'Delivered' : 
+                          order.status === 'shipped' ? 'Shipped' : 'Processing';
+        
+        const itemsHTML = order.items.map(item => {
+            const itemPrice = parseFloat(item.price) || 0;
+            const itemQuantity = parseInt(item.quantity) || 1;
+            return `
+                <div class="order-item-row">
+                    <div>
+                        <div class="order-item-name">${item.name}</div>
+                        <div class="order-item-qty">Qty: ${itemQuantity}</div>
+                    </div>
+                    <div class="order-item-price">$${(itemPrice * itemQuantity).toFixed(2)}</div>
+                </div>
+            `;
+        }).join('');
+        
+        return `
+            <div class="order-card">
+                <div class="order-header-row">
+                    <div>
+                        <div class="order-number-display">${order.orderNumber}</div>
+                        <div class="order-date">${formattedDate}</div>
+                    </div>
+                    <span class="order-status ${statusClass}">${statusText}</span>
+                </div>
+                <div class="order-items-list">
+                    ${itemsHTML}
+                </div>
+                <div class="order-footer">
+                    <div class="order-total">Total: $${order.total.toFixed(2)}</div>
+                    <div class="order-actions">
+                        <button class="order-btn order-btn-secondary" onclick="viewOrderDetails(${index})">View Details</button>
+                        <button class="order-btn" onclick="reorder(${index})">Reorder</button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+function viewOrderDetails(index) {
+    const orders = JSON.parse(localStorage.getItem('customerOrders') || '[]');
+    const order = orders[index];
+    
+    if (!order) return;
+    
+    const itemsList = order.items.map(item => 
+        `- ${item.name} (Qty: ${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}`
+    ).join('\n');
+    
+    alert(`Order Details\n\n` +
+          `Order Number: ${order.orderNumber}\n` +
+          `Date: ${new Date(order.date).toLocaleDateString()}\n` +
+          `Status: ${order.status}\n\n` +
+          `Items:\n${itemsList}\n\n` +
+          `Subtotal: $${order.subtotal.toFixed(2)}\n` +
+          `Tax: $${order.tax.toFixed(2)}\n` +
+          `Total: $${order.total.toFixed(2)}\n\n` +
+          `Shipping Address:\n` +
+          `${order.shipping.firstName} ${order.shipping.lastName}\n` +
+          `${order.shipping.address}\n` +
+          `${order.shipping.city}, ${order.shipping.state} ${order.shipping.zip}\n` +
+          `Email: ${order.shipping.email}\n` +
+          `Phone: ${order.shipping.phone}`);
+}
+
+function reorder(index) {
+    const orders = JSON.parse(localStorage.getItem('customerOrders') || '[]');
+    const order = orders[index];
+    
+    if (!order) return;
+    
+    // Add all items from the order to cart
+    order.items.forEach(item => {
+        addToCart(item.name, item.price);
+    });
+    
+    closeMyOrders();
+    
+    // Show notification
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 30px;
+        background: #4CAF50;
+        color: white;
+        padding: 20px 30px;
+        border-radius: 8px;
+        z-index: 9999;
+        animation: slideIn 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    `;
+    notification.innerHTML = `
+        <strong>✓ Items Added to Cart</strong><br>
+        <span style="font-size: 14px;">All items from order ${order.orderNumber} have been added</span>
+    `;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+}
+
+// Format card number input
+document.addEventListener('DOMContentLoaded', function() {
+    const cardNumberInput = document.getElementById('cardNumber');
+    if (cardNumberInput) {
+        cardNumberInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s/g, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+            e.target.value = formattedValue;
+        });
+    }
+    
+    const expiryInput = document.getElementById('expiry');
+    if (expiryInput) {
+        expiryInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.slice(0, 2) + '/' + value.slice(2, 4);
+            }
+            e.target.value = value;
+        });
+    }
+});
+
+// Load cart count on page load
+window.addEventListener('DOMContentLoaded', function() {
+    const savedCart = JSON.parse(localStorage.getItem('cart') || '[]');
+    
+    // Validate and clean cart data
+    cartItems = savedCart.filter(item => {
+        const price = parseFloat(item.price);
+        const quantity = parseInt(item.quantity);
+        return !isNaN(price) && !isNaN(quantity) && quantity > 0;
+    });
+    
+    cartCount = cartItems.reduce((sum, item) => sum + parseInt(item.quantity || 1), 0);
+    document.getElementById('cartCount').textContent = cartCount;
+    
+    // Save cleaned cart back
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+});
+
+// Tenant Login Functions
+function openTenantLogin() {
+    document.getElementById('tenantLoginModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeTenantLogin() {
+    document.getElementById('tenantLoginModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function closeTenantLoginOutside(event) {
+    if (event.target.id === 'tenantLoginModal') {
+        closeTenantLogin();
+    }
+}
+
+function switchTab(tab) {
+    const tabs = document.querySelectorAll('.login-tab');
+    const forms = document.querySelectorAll('.login-form');
+    
+    tabs.forEach(t => t.classList.remove('active'));
+    forms.forEach(f => f.classList.remove('active'));
+    
+    if (tab === 'login') {
+        tabs[0].classList.add('active');
+        document.getElementById('loginForm').classList.add('active');
+    } else {
+        tabs[1].classList.add('active');
+        document.getElementById('registerForm').classList.add('active');
+    }
+}
+
+function handleTenantLogin(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    
+    // Demo credentials for different brands
+    const tenantAccounts = {
+        'gucci@luxemall.com': { password: 'Gucci2026', storeName: 'Gucci', category: 'Luxury Fashion' },
+        'nike@luxemall.com': { password: 'Nike2026', storeName: 'Nike', category: 'Sportswear' },
+        'apple@luxemall.com': { password: 'Apple2026', storeName: 'Apple Store', category: 'Technology' },
+        'zara@luxemall.com': { password: 'Zara2026', storeName: 'Zara', category: 'Contemporary Fashion' },
+        'sephora@luxemall.com': { password: 'Sephora2026', storeName: 'Sephora', category: 'Beauty & Cosmetics' },
+        'tiffany@luxemall.com': { password: 'Tiffany2026', storeName: 'Tiffany & Co', category: 'Fine Jewellery' },
+        'coach@luxemall.com': { password: 'Coach2026', storeName: 'Coach', category: 'Handbags & Accessories' },
+        'prada@luxemall.com': { password: 'Prada2026', storeName: 'Prada', category: 'Luxury Fashion' },
+        'samsung@luxemall.com': { password: 'Samsung2026', storeName: 'Samsung', category: 'Electronics' },
+        'rayban@luxemall.com': { password: 'RayBan2026', storeName: 'Ray-Ban', category: 'Eyewear' }
+    };
+    
+    if (tenantAccounts[email] && tenantAccounts[email].password === password) {
+        const tenantData = {
+            storeName: tenantAccounts[email].storeName,
+            category: tenantAccounts[email].category,
+            email: email
+        };
+        
+        // Show dashboard
+        showTenantDashboard(tenantData);
+        closeTenantLogin();
+    } else {
+        alert('Invalid credentials. Try one of these demo accounts:\n\n' +
+              '🏪 Gucci: gucci@luxemall.com / Gucci2026\n' +
+              '👟 Nike: nike@luxemall.com / Nike2026\n' +
+              '📱 Apple: apple@luxemall.com / Apple2026\n' +
+              '👗 Zara: zara@luxemall.com / Zara2026\n' +
+              '💄 Sephora: sephora@luxemall.com / Sephora2026\n' +
+              '💎 Tiffany: tiffany@luxemall.com / Tiffany2026\n' +
+              '👜 Coach: coach@luxemall.com / Coach2026\n' +
+              '👠 Prada: prada@luxemall.com / Prada2026\n' +
+              '📺 Samsung: samsung@luxemall.com / Samsung2026\n' +
+              '🕶️ Ray-Ban: rayban@luxemall.com / RayBan2026');
+    }
+}
+
+function handleTenantRegister(event) {
+    event.preventDefault();
+    
+    const storeName = document.getElementById('storeName').value;
+    const category = document.getElementById('storeCategory').options[document.getElementById('storeCategory').selectedIndex].text;
+    const email = document.getElementById('registerEmail').value;
+    const phone = document.getElementById('registerPhone').value;
+    
+    // Save tenant data
+    const tenantData = {
+        storeName: storeName,
+        category: category,
+        email: email,
+        phone: phone
+    };
+    localStorage.setItem('tenantData', JSON.stringify(tenantData));
+    
+    // Show success message
+    alert('Registration successful! You can now login with:\nEmail: tenant@luxemall.com\nPassword: tenant123');
+    
+    // Switch to login tab
+    switchTab('login');
+}
+
+function showTenantDashboard(tenantData) {
+    document.getElementById('dashStoreName').textContent = tenantData.storeName;
+    document.getElementById('dashCategory').textContent = tenantData.category;
+    document.getElementById('dashEmail').textContent = tenantData.email;
+    
+    document.getElementById('tenantDashboard').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function handleLogout() {
+    document.getElementById('tenantDashboard').style.display = 'none';
+    document.body.style.overflow = 'auto';
+    
+    // Hide all sections
+    hideAddProduct();
+    hideOrders();
+    hideInventory();
+    hideAnalytics();
+    
+    alert('Logged out successfully!');
+}
+
+// Quick Actions Functions
+function showAddProduct() {
+    document.getElementById('addProductSection').style.display = 'block';
+    document.getElementById('addProductSection').scrollIntoView({ behavior: 'smooth' });
+}
+
+function hideAddProduct() {
+    document.getElementById('addProductSection').style.display = 'none';
+}
+
+function showOrders() {
+    document.getElementById('ordersSection').style.display = 'block';
+    document.getElementById('ordersSection').scrollIntoView({ behavior: 'smooth' });
+}
+
+function hideOrders() {
+    document.getElementById('ordersSection').style.display = 'none';
+}
+
+function showInventory() {
+    document.getElementById('inventorySection').style.display = 'block';
+    document.getElementById('inventorySection').scrollIntoView({ behavior: 'smooth' });
+}
+
+function hideInventory() {
+    document.getElementById('inventorySection').style.display = 'none';
+}
+
+function showAnalytics() {
+    document.getElementById('analyticsSection').style.display = 'block';
+    document.getElementById('analyticsSection').scrollIntoView({ behavior: 'smooth' });
+}
+
+function hideAnalytics() {
+    document.getElementById('analyticsSection').style.display = 'none';
+}
+
+function handleAddProduct(event) {
+    event.preventDefault();
+    
+    const productName = document.getElementById('productName').value;
+    const category = document.getElementById('productCategory').value;
+    const price = document.getElementById('productPrice').value;
+    const stock = document.getElementById('productStock').value;
+    const description = document.getElementById('productDescription').value;
+    
+    // Save product to localStorage
+    let products = JSON.parse(localStorage.getItem('tenantProducts') || '[]');
+    products.push({
+        name: productName,
+        category: category,
+        price: price,
+        stock: stock,
+        description: description,
+        date: new Date().toISOString()
+    });
+    localStorage.setItem('tenantProducts', JSON.stringify(products));
+    
+    // Show success notification
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 30px;
+        background: #4CAF50;
+        color: white;
+        padding: 20px 30px;
+        border-radius: 8px;
+        z-index: 9999;
+        animation: slideIn 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    `;
+    notification.innerHTML = `
+        <strong>✓ Product Added Successfully</strong><br>
+        <span style="font-size: 14px;">${productName} has been added to inventory</span>
+    `;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+    
+    // Reset form
+    event.target.reset();
+    
+    // Hide form after 2 seconds
+    setTimeout(() => {
+        hideAddProduct();
+    }, 2000);
+}
+
+// Escape key to close modals
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeModal();
+        closeTenantLogin();
+    }
+});
+
+// Scroll to Top Button
+window.addEventListener('scroll', function() {
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.add('show');
+    } else {
+        scrollTopBtn.classList.remove('show');
+    }
+});
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Animated Counter
+function animateCounter(element) {
+    const target = parseInt(element.dataset.target);
+    const duration = 2000;
+    const increment = target / (duration / 16);
+    let current = 0;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target + '+';
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 16);
+}
+
+// Intersection Observer for Counter Animation
+const observerOptions = {
+    threshold: 0.5
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                if (counter.textContent === '0') {
+                    animateCounter(counter);
+                }
+            });
+        }
+    });
+}, observerOptions);
+
+const statsSection = document.querySelector('.stats-section');
+if (statsSection) {
+    observer.observe(statsSection);
+}
+
+// Smooth Scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Add scroll animation to elements
+const animateOnScroll = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.brand-card, .dining-card, .service-item, .product-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease';
+    animateOnScroll.observe(el);
+});
+
+// Add animation keyframes
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideIn {
+        from {
+            transform: translateX(400px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(400px);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
+</script>
+
+</body>
+</html>
