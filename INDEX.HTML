@@ -2985,7 +2985,7 @@ footer {
                 </div>
                 <button type="submit" class="login-btn">Login to Dashboard</button>
                 <div class="forgot-password">
-                    <a href="#" onclick="alert('Password reset feature coming soon!'); return false;">Forgot Password?</a>
+                    <a href="#" onclick="openForgotPassword(); return false;">Forgot Password?</a>
                 </div>
             </form>
             
@@ -3024,6 +3024,42 @@ footer {
                     <input type="password" id="registerPassword" placeholder="Create password" required>
                 </div>
                 <button type="submit" class="login-btn">Register Store</button>
+            </form>
+            
+            <!-- Forgot Password Form -->
+            <form id="forgotPasswordForm" class="login-form" onsubmit="handleForgotPassword(event)">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="forgotEmail" placeholder="Enter your registered email" required>
+                </div>
+                <div class="form-group">
+                    <label>Store Name (for verification)</label>
+                    <input type="text" id="forgotStoreName" placeholder="Enter your store name" required>
+                </div>
+                <button type="submit" class="login-btn">Send Reset Code</button>
+                <div class="forgot-password">
+                    <a href="#" onclick="backToLogin(); return false;">← Back to Login</a>
+                </div>
+            </form>
+            
+            <!-- Reset Password Form -->
+            <form id="resetPasswordForm" class="login-form" onsubmit="handleResetPassword(event)">
+                <div class="form-group">
+                    <label>Reset Code</label>
+                    <input type="text" id="resetCode" placeholder="Enter 6-digit code" maxlength="6" required>
+                </div>
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input type="password" id="newPassword" placeholder="Enter new password" required>
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm new password" required>
+                </div>
+                <button type="submit" class="login-btn">Reset Password</button>
+                <div class="forgot-password">
+                    <a href="#" onclick="backToLogin(); return false;">← Back to Login</a>
+                </div>
             </form>
         </div>
     </div>
@@ -3966,6 +4002,7 @@ function openTenantLogin() {
 function closeTenantLogin() {
     document.getElementById('tenantLoginModal').style.display = 'none';
     document.body.style.overflow = 'auto';
+    backToLogin(); // Reset to login form
 }
 
 function closeTenantLoginOutside(event) {
@@ -3988,6 +4025,154 @@ function switchTab(tab) {
         tabs[1].classList.add('active');
         document.getElementById('registerForm').classList.add('active');
     }
+}
+
+// Forgot Password Functions
+let resetCodeGenerated = '';
+let resetEmail = '';
+
+function openForgotPassword() {
+    document.querySelectorAll('.login-form').forEach(f => f.classList.remove('active'));
+    document.getElementById('forgotPasswordForm').classList.add('active');
+    
+    // Update header
+    document.querySelector('.login-header h2').textContent = 'Reset Password';
+    document.querySelector('.login-header p').textContent = 'We\'ll send you a reset code';
+}
+
+function backToLogin() {
+    document.querySelectorAll('.login-form').forEach(f => f.classList.remove('active'));
+    document.getElementById('loginForm').classList.add('active');
+    
+    // Reset header
+    document.querySelector('.login-header h2').textContent = 'Tenant Portal';
+    document.querySelector('.login-header p').textContent = 'Manage Your Store';
+    
+    // Reset tabs
+    document.querySelectorAll('.login-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.login-tab')[0].classList.add('active');
+}
+
+function handleForgotPassword(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('forgotEmail').value;
+    const storeName = document.getElementById('forgotStoreName').value;
+    
+    // Verify email exists in tenant accounts
+    const tenantAccounts = {
+        'gucci@luxemall.com': { storeName: 'Gucci' },
+        'nike@luxemall.com': { storeName: 'Nike' },
+        'apple@luxemall.com': { storeName: 'Apple Store' },
+        'zara@luxemall.com': { storeName: 'Zara' },
+        'sephora@luxemall.com': { storeName: 'Sephora' },
+        'tiffany@luxemall.com': { storeName: 'Tiffany & Co' },
+        'coach@luxemall.com': { storeName: 'Coach' },
+        'prada@luxemall.com': { storeName: 'Prada' },
+        'samsung@luxemall.com': { storeName: 'Samsung' },
+        'rayban@luxemall.com': { storeName: 'Ray-Ban' }
+    };
+    
+    if (tenantAccounts[email] && tenantAccounts[email].storeName.toLowerCase() === storeName.toLowerCase()) {
+        // Generate 6-digit code
+        resetCodeGenerated = Math.floor(100000 + Math.random() * 900000).toString();
+        resetEmail = email;
+        
+        // Show reset form
+        document.getElementById('forgotPasswordForm').classList.remove('active');
+        document.getElementById('resetPasswordForm').classList.add('active');
+        
+        // Show notification with code (in real app, this would be sent via email)
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            top: 100px;
+            right: 30px;
+            background: #4CAF50;
+            color: white;
+            padding: 25px 35px;
+            border-radius: 8px;
+            z-index: 9999;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 350px;
+        `;
+        notification.innerHTML = `
+            <strong>✓ Reset Code Sent!</strong><br>
+            <span style="font-size: 14px;">Your reset code: <strong style="font-size: 20px; display: block; margin-top: 10px; letter-spacing: 3px;">${resetCodeGenerated}</strong></span>
+            <span style="font-size: 12px; opacity: 0.9; display: block; margin-top: 10px;">In production, this would be sent to your email</span>
+        `;
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => notification.remove(), 300);
+        }, 8000);
+        
+    } else {
+        alert('Email or Store Name not found. Please check your details.\n\nDemo accounts:\n- gucci@luxemall.com (Gucci)\n- nike@luxemall.com (Nike)\n- apple@luxemall.com (Apple Store)');
+    }
+}
+
+function handleResetPassword(event) {
+    event.preventDefault();
+    
+    const code = document.getElementById('resetCode').value;
+    const newPassword = document.getElementById('newPassword').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    
+    // Validate code
+    if (code !== resetCodeGenerated) {
+        alert('Invalid reset code. Please check and try again.');
+        return;
+    }
+    
+    // Validate passwords match
+    if (newPassword !== confirmPassword) {
+        alert('Passwords do not match. Please try again.');
+        return;
+    }
+    
+    // Validate password strength
+    if (newPassword.length < 6) {
+        alert('Password must be at least 6 characters long.');
+        return;
+    }
+    
+    // Success - In real app, would update password in database
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 30px;
+        background: #4CAF50;
+        color: white;
+        padding: 20px 30px;
+        border-radius: 8px;
+        z-index: 9999;
+        animation: slideIn 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    `;
+    notification.innerHTML = `
+        <strong>✓ Password Reset Successful!</strong><br>
+        <span style="font-size: 14px;">You can now login with your new password</span>
+    `;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+    
+    // Reset forms and go back to login
+    document.getElementById('resetPasswordForm').reset();
+    document.getElementById('forgotPasswordForm').reset();
+    resetCodeGenerated = '';
+    resetEmail = '';
+    
+    setTimeout(() => {
+        backToLogin();
+    }, 2000);
 }
 
 function handleTenantLogin(event) {
